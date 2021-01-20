@@ -18,8 +18,8 @@ class setPerson: private person{
     
     protected:
 
-        void setName();
-        void setStatus();
+        void setName(string name);
+        void setStatus(string status);
 
 };
 
@@ -27,17 +27,20 @@ class employee: private person, public setPerson{
 
     private:
 
-        int identification;
+        long int identification;
         string occupation;
         float salary;
         string workSchedule;
 
     public:
 
-        void getRegister();
-        void setSalary();
-        void setOccupation();
-        void SetSchedule();
+        employee(string name, string cpf, string dateBirth, string status, long int identification, string occupation, float salary, string workSchedule);
+        
+        void getRegister(string name, string cpf, string dateBirth, string status, long int identification, string occupation, float salary, string workSchedule);
+        
+        void setOccupation(string occoupation);
+        void setSalary(float salary);
+        void SetSchedule(string workSchedule);
 
 
 };
@@ -54,9 +57,11 @@ class client: private person, public setPerson{
 
     public:
 
-        void getRegister();
-        void setAgency();
-        void setIncome();
-        void setProfession();
-};
+        client(string name, string cpf, string dateBirth, string status, string account, int agency, double monthlyIncome, string profession, double accountBalance);
 
+        void getRegister(string name, string cpf, string dateBirth, string status, string account, int agency, double monthlyIncome, string profession, double accountBalance);
+        
+        void setAgency(int agency);
+        void setIncome(double monthlyIncome);
+        void setProfession(string profession);
+};
